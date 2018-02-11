@@ -138,7 +138,7 @@
             <!-- /.box-body -->
             <div class=" box-footer ">
                 <a href="#" id="btn_cancelar" class="btn btn-default pull-left">Voltar</a>
-                <button type="button" id="btn_salvar" class="btn btn-primary pull-right">Finalizar Pedido
+                <button type="submit" id="btn_salvar" class="btn btn-primary pull-right">Finalizar Pedido
                 </button>
             </div>
         </form>
@@ -146,29 +146,17 @@
 
     <script type="text/javascript">
         $(document).ready(function () {
-            $('#btn_salvar').click(function () {
-                if ($("select").filter(function () {
-                        return $.trim($(this).val()).length == 0
-                    }).length == 0) {
-                    $('form').submit();
-                } else {
-                    swal('Preencha todos os campos', 'Verifique se voce preencheu todos os campos ...', 'error');
-                }
-            });
+           
 
-            $(":input").inputmask();
             $('select').addClass('form-control');
             $('input').addClass('form-control');
             $('[name=data_entrega]').addClass('datepicker');
-            $('#body').addClass('sidebar-collapse');
+  
             $('#pedidos').addClass('active');
             $('#btn_cancelar').click(function () {
                 return window.history.back();
             });
-            $('.numero').inputmask('99999');
-            $('.add-row').click(function () {
-                $('.numero').inputmask('99999');
-            });
+           
         });
     </script>
 
