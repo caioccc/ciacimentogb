@@ -155,36 +155,16 @@
 
         $(document).ready(function () {
 
-            $('input').on('change keyup paste', function () {
-                $(this).val($(this).val().toUpperCase());
-            });
-
-            $('[name=login]').on('change keyup paste', function () {
-                $(this).val($(this).val().toLowerCase());
-            });
-            $('#btn_salvar').click(function () {
-                if ($("select").filter(function () {
-                        return $.trim($(this).val()).length == 0
-                    }).length == 0) {
-                    $('form').submit();
-                } else {
-                    swal('Preencha todos os campos', 'Verifique se voce preencheu todos os campos ...', 'error');
-                }
-            });
-
-            $(":input").inputmask();
             $('select').addClass('form-control');
             $('[name=data_entrega]').addClass('datepicker');
             $('input').addClass('form-control');
-            $('#body').addClass('sidebar-collapse');
+         
             $('#pedidos').addClass('active');
             $('#btn_cancelar').click(function () {
                 return window.history.back();
             });
-            $('.numero').inputmask('99999');
-            $('.add-row').click(function () {
-                $('.numero').inputmask('99999');
-            });
+        
+          
         });
     </script>
     <script>
